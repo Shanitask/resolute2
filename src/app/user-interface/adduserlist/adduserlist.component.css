@@ -1,0 +1,141 @@
+/* Apply box-sizing globally */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Container Styling */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Card Styling */
+.card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+
+
+/* Input, Select, and Textarea Styling */
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  /* margin-top: 5px; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+select:focus,
+textarea:focus,
+.form-check-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Invalid Field Styling */
+.invalid-field {
+  border-color: #dc3545;
+}
+
+
+
+/* Error Container Styling */
+.error-container {
+  margin-top: 5px;
+  color: #dc3545;
+  font-size: 0.875em;
+}
+
+/* Alert Styling */
+.alert {
+  padding: 15px;
+  margin-top: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+
+.alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+}
+
+/* Button Styling */
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #0056b3;
+  border-color: #0056b3;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Close Button Styling */
+.close {
+  float: right;
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+.close span {
+  display: inline-block;
+}
+.invalid-field {
+    border: 1px solid red;
+  }
+  
+  .error-container {
+    color: red;
+    font-size: 0.9em;
+  }
+  
+  .alert {
+    margin-top: 20px;
+  }
+  

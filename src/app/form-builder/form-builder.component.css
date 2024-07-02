@@ -1,0 +1,56 @@
+.form-builder {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .form-builder h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-builder .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-builder label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form-builder input, .form-builder select, .form-builder textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  .form-builder .add-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .form-builder .add-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .field-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }  

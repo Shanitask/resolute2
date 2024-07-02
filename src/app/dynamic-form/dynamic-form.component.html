@@ -1,0 +1,60 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fields; let i = index" class="form-group">
+      <div [ngSwitch]="field.type">
+        <div *ngSwitchCase="'text'">
+          <label>{{ field.label }}</label>
+          <input type="text" [formControlName]="field.label" [placeholder]="field.placeholder" required />
+          <button type="button" class="remove-button" (click)="removeField(i)">❌</button>
+          <div *ngIf="form.get(field.label)?.invalid && form.get(field.label)?.touched" class="error">
+            {{ field.label }} is required.
+          </div>
+        </div>
+  
+        <div *ngSwitchCase="'textarea'">
+          <label>{{ field.label }}</label>
+          <textarea [formControlName]="field.label" [placeholder]="field.placeholder"></textarea>
+          <button type="button" class="remove-button" (click)="removeField(i)">❌</button>
+          <div *ngIf="form.get(field.label)?.invalid && form.get(field.label)?.touched" class="error">
+            {{ field.label }} is required.
+          </div>
+        </div>
+  
+        <div *ngSwitchCase="'dropdown'">
+          <label>{{ field.label }}</label>
+          <select [formControlName]="field.label">
+            <option *ngFor="let option of field.options" [value]="option">{{ option }}</option>
+          </select>
+          <button type="button" class="remove-button" (click)="removeField(i)">❌</button>
+          <div *ngIf="form.get(field.label)?.invalid && form.get(field.label)?.touched" class="error">
+            {{ field.label }} is required.
+          </div>
+        </div>
+  
+        <div *ngSwitchCase="'checkbox'">
+          <label>
+            <input type="checkbox" [formControlName]="field.label" /> {{ field.label }}
+          </label>
+          <button type="button" class="remove-button" (click)="removeField(i)">❌</button>
+          <div *ngIf="form.get(field.label)?.invalid && form.get(field.label)?.touched" class="error">
+            {{ field.label }} is required.
+          </div>
+        </div>
+  
+        <div *ngSwitchCase="'radio'">
+          <label>{{ field.label }}</label>
+          <div class="radio-group">
+            <label *ngFor="let option of field.options">
+              <input type="radio" [formControlName]="field.label" [value]="option" /> {{ option }}
+            </label>
+          </div>
+          <button type="button" class="remove-button" (click)="removeField(i)">❌</button>
+          <div *ngIf="form.get(field.label)?.invalid && form.get(field.label)?.touched" class="error">
+            {{ field.label }} is required.
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" class="submit-button btn btn-primary">Submit</button>
+  </form>
+  

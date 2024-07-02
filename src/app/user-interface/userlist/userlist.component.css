@@ -1,0 +1,60 @@
+/* Container styling */
+.container {
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+  }
+  
+  /* Table styling */
+  table.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  table.table thead {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  table.table thead th {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  table.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  table.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  table.table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  table.table tbody td {
+    padding: 12px 15px;
+  }
+  
+  table.table tbody td i.fa {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  table.table tbody td i.fa:hover {
+    color: red;
+  }
+  
+  /* No records row */
+  table.table tbody tr td[colspan] {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666666;
+  }
+  

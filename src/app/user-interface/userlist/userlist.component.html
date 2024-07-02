@@ -1,0 +1,39 @@
+<div class="container mt-3">
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+         
+          <th>Role</th>
+          <th>Comments</th> <!-- Added Comments Column -->
+          
+          <th>Gender</th>
+          <th>Terms Accepted</th> <!-- Added Terms Accepted Column -->
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items ; let i = index">
+          <td>{{i+1}}</td>
+          <td>{{item.name}}</td>
+   
+          <td>{{item.role}}</td>
+          <td>{{item.comments || 'N/A'}}</td> 
+          
+          <td>{{item.gender}}</td><!-- Display Comments -->
+          <td>{{item.termsAccepted ? 'Yes' : 'No'}}</td> <!-- Display Terms Accepted -->
+          <td>
+            <i (click)="deleteUser(item.id)" class="fa fa-trash" style="font-size: 30px; color: brown;"></i>&nbsp;&nbsp;
+            <a routerLink="/User_Interface/update-user/{{item.id}}"><i class="fa fa-edit" style="font-size: 30px; color: blueviolet;"></i></a>
+          </td>
+          
+        </tr>
+        <tr *ngIf="items.length === 0">
+          <td colspan="8">No records found</td> <!-- Updated colspan -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

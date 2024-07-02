@@ -1,0 +1,107 @@
+<div class="container">
+  <div class="row">
+    <h1 style="text-align: center; margin-top: 20px;">
+      {{isEditMode ? 'Update Information' : 'Add Information'}}
+    </h1>
+    <div *ngIf='alert' class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Success!</strong> Your Data is saved Successfully.
+    </div>
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="card">
+        <form [formGroup]='addUserForm' (ngSubmit)="CreateUser()">
+          <!-- Name Field -->
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text"
+              [ngClass]="{'is-invalid': (submitted || addUserForm.controls.name.touched) && addUserForm.controls.name.invalid}"
+              class="form-control" placeholder="Enter Name.." formControlName='name'>
+            <div class="error-container"
+              *ngIf="(submitted || addUserForm.controls.name.touched) && addUserForm.controls.name.invalid">
+              <span *ngIf="addUserForm.controls.name.errors.required"> Field is required </span>
+              <span *ngIf="addUserForm.controls.name.errors.pattern"> Invalid data (only letters and spaces allowed)</span>
+            </div>
+          </div>
+          
+          <br>
+          <!-- Role Field -->
+          <div class="form-group">
+            <label>Role</label>
+            <select class="form-control"
+              [ngClass]="{'is-invalid': (submitted || addUserForm.controls.role.touched) && addUserForm.controls.role.invalid}"
+              formControlName='role'>
+              <option value="">Select Role</option>
+              <option>Angular Developer</option>
+              <option>Web Developer</option>
+              <option>React Developer</option>
+              <option>.Net Developer</option>
+              <option>Front End Developer</option>
+            </select>
+            <div class="error-container"
+              *ngIf="(submitted || addUserForm.controls.role.touched) && addUserForm.controls.role.invalid">
+              <span *ngIf="addUserForm.controls.role.errors.required"> Field is required </span>
+            </div>
+          </div>
+          <br>
+   
+          <!-- Gender Field -->
+          <div class="form-group">
+            <label>Gender &nbsp;</label>
+            <div class="form-check-inline">
+              <label class="form-check-label" for="male">
+                <input type="radio" class="form-check-input" id="male" value="male" formControlName='gender'>Male
+              </label>
+            </div>
+            <div class="form-check-inline">
+              <label class="form-check-label" for="female">
+                <input type="radio" class="form-check-input" id="female" value="female" formControlName='gender'>Female
+              </label>
+            </div>
+            <div class="error-container"
+              *ngIf="(submitted || addUserForm.controls.gender.touched) && addUserForm.controls.gender.invalid">
+              <span *ngIf="addUserForm.controls.gender.errors.required"> Field is required </span>
+            </div>
+            <br>
+          </div>
+          <br>
+        
+          <!-- Comments Field -->
+          <div class="form-group">
+            <label>Comments</label>
+            <textarea class="form-control" placeholder="comments"
+              [ngClass]="{'is-invalid': (submitted || addUserForm.controls.comments.touched) && addUserForm.controls.comments.invalid}"
+              rows="3" formControlName="comments"></textarea>
+            <div class="error-container"
+              *ngIf="(submitted || addUserForm.controls.comments.touched) && addUserForm.controls.comments.invalid">
+              <span *ngIf="addUserForm.controls.comments.errors.maxLength"> Comments cannot exceed 500 characters </span>
+            </div>
+          </div>
+          <br>
+            <!-- Checkbox Field -->
+            <div class="form-group">
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" formControlName="termsAccepted">
+                  <label class="form-check-label">I accept the terms and conditions</label>
+                
+                </div>
+              </div>
+              <br>
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-primary" style="margin-bottom: 10px;">{{isEditMode ? 'Update' : 'Submit'}}</button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+<!-- Success Alert -->
+<div *ngIf="alert" class="alert alert-success">
+  Data saved successfully!
+  <button (click)="closeAlert()">Close</button>
+</div>
+
+<!-- Error Alert -->
+<div *ngIf="errorMessage" class="alert alert-danger">
+  {{ errorMessage }}
+</div>

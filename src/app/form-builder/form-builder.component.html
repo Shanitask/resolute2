@@ -1,0 +1,44 @@
+<div class="form-builder">
+    <h2>Dynamic Form Builder</h2>
+  
+    <div>
+      <label>Field Type:</label>
+      <select [(ngModel)]="fieldType">
+        <option value="text">Text Input</option>
+        <option value="textarea">Textarea</option>
+        <option value="dropdown">Dropdown</option>
+        <option value="checkbox">Checkbox</option>
+        <option value="radio">Radio Button</option>
+      </select>
+    </div>
+  
+    <div>
+      <label>Label:</label>
+      <input type="text" [(ngModel)]="label" />
+    </div>
+  
+    <div *ngIf="fieldType !== 'checkbox' && fieldType !== 'radio'">
+      <label>Placeholder:</label>
+      <input type="text" [(ngModel)]="placeholder" />
+    </div>
+  
+    <div *ngIf="fieldType === 'dropdown' || fieldType === 'radio'">
+      <label>Options (comma separated):</label>
+      <input type="text" [(ngModel)]="optionString" />
+    </div>
+  
+    <div>
+      <label>
+        <input type="checkbox" [(ngModel)]="required" /> Required
+      </label>
+    </div>
+  
+    <button class="btn btn-primary" (click)="addField()">Add Field</button>
+  
+    <div *ngFor="let field of fields; let i = index">
+      <div>{{ field.label }} ({{ field.type }}) <button (click)="removeField(i)" class="btn btn-danger"> Remove</button></div>
+    </div>
+  </div>
+  
+  <app-dynamic-form></app-dynamic-form>
+  

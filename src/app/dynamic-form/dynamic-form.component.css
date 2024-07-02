@@ -1,0 +1,67 @@
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="text"], form textarea, form select {
+    width: calc(100% - 40px);
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
+  form .radio-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form .radio-group label {
+    margin-right: 10px;
+  }
+  
+  /* form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+  
+  
+  
+  .remove-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #dc3545;
+    padding-left: 10px;
+        margin-top: 12px;
+    margin-left: -2px;
+
+  }
+  
+  .remove-button:hover {
+    color: #a71d2a;
+  }
+  
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
